@@ -324,6 +324,8 @@ update_data(struct driz_param_t* p, const integer_t ii, const integer_t jj,
             const float d, const float vc, const float dow) {
   const double vc_plus_dow = vc + dow;
 
+  if (dow == 0.0f) return;
+
   /* Just a simple calculation without logical tests */
   if (vc == 0.0) {
     *output_data_ptr(p, ii, jj) = d;
